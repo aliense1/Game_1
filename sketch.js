@@ -5,9 +5,9 @@ var gameState = "wait";
 
 
 function preload(){
-    splash_img = loadImage("assets/Game_On.gif");
-    bg_img = loadImage("assets/bg.png")
-    player_img = loadImage("assets/player.png")
+    splash_img = loadImage("./assets/Game_On.gif");
+    bg_img = loadImage("./assets/bg.png")
+    player_img = loadImage("./assets/player.png")
 }
 
 function setup() {
@@ -35,4 +35,17 @@ function draw(){
         playButton.show();
         infoButton.show();
     }
+
+    playButton.mousePressed( () => {
+        playButton.hide();
+        infoButton.hide();
+        gameState = "level1"
+    })
+
+    infoButton.mousePressed(() =>{
+        infoButton.hide();
+        playButton.hide();
+        gameState = "about"
+
+    })
 }
